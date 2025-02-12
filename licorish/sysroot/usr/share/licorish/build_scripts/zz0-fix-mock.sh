@@ -9,4 +9,3 @@ host-spawn -pty podman $@
 EOF
 
 chmod +x /usr/bin/podman
-ln -s /usr/bin/dnf /usr/bin/dnf5
