@@ -103,6 +103,7 @@ jobs:
         run: |
           cosign verify ${{ steps.registry_case.outputs.lowercase}}/${{ matrix.container }}@${TAGS} --certificate-identity-regexp "https://github.com/${{ github.repository }}" --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
         env:
+          TAGS: ${{ steps.push.outputs.digest }}
           COSIGN_EXPERIMENTAL: 1
 
       - name: Echo outputs
