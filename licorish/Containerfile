@@ -6,6 +6,6 @@ LABEL com.github.containers.toolbox="true" \
     summary="Containerfile for building fedora packages with mock and fedpkg" \
     maintainer="tulilirockz <tulilirockz@outlook.com>"
 
-COPY sysroot /
+COPY licorish/sysroot /
 
 RUN --mount=type=tmpfs,dst=/tmp /usr/share/licorish/build_scripts/build.sh
