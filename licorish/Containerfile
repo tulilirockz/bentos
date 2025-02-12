@@ -1,0 +1,11 @@
+ARG FEDORA_TAG
+FROM quay.io/fedora/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+    usage="This image is meant to be used with the toolbox or distrobox command" \
+    summary="Containerfile for building fedora packages with mock and fedpkg" \
+    maintainer="tulilirockz <tulilirockz@outlook.com>"
+
+COPY sysroot /
+
+RUN --mount=type=tmpfs,dst=/tmp /usr/share/licorish/build_scripts/build.sh
